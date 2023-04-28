@@ -14,22 +14,22 @@
     // Get all the rows in the table
     var rows = document.getElementsByTagName("tr");
     for (var i = 0; i < rows.length; i++) {
-        // Get the third cell in this row (the ViewProfile cell)
+        // Get the 8th cell in this row (the ViewProfile cell)
         var viewProfileCell = rows[i].getElementsByTagName("td")[8];
         if (viewProfileCell) {
             // Get the ViewProfile link
             var viewProfileLink = viewProfileCell.getElementsByTagName("a")[0];
             if (viewProfileLink) {
-                // Get the URL of the ViewProfile link and add some text to the end
+                // Get the URL of the ViewProfile link and add some text to the end to make link to the PDF statment
                 var printProfileUrl = viewProfileLink.href + "/statement.pdf";
-                // Create a new cell for the PrintProfile link
+                // Create a new cell for the PDF statement link
                 var printProfileCell = rows[i].insertCell(9);
-                // Create a new anchor tag for the PrintProfile cell
+                // Create a new anchor tag for the PDF statement link cell
                 var printProfileLink = document.createElement("a");
                 printProfileLink.innerHTML = "PDF Statement";
                 printProfileLink.href = printProfileUrl;
                 printProfileLink.target = "_blank";
-                printProfileLink.className = "btn btn-default btn-xs"; // Add the class to the link
+                printProfileLink.className = "btn btn-default btn-xs"; // Add the class to the link so that it matches the CSS at the other button.
                 // Add the link to the PrintProfile cell
                 printProfileCell.appendChild(printProfileLink);
             }
